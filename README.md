@@ -1,1 +1,1 @@
-## Kaban (Zustan state Management)
+## Kaban (Zustand state Management)

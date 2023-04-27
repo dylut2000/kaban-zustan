@@ -1,7 +1,12 @@
+import './App.css'
+import Column from './components/column/Column'
+
 const App = () => {
   return (
-    <div>
-      <h1>Lets try some Zustan</h1>
+    <div className='app'>
+      <Column state='PLANNED' />
+      <Column state='ONGOING' />
+      <Column state='DONE' />
     </div>
   )
 }
