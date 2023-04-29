@@ -23,7 +23,7 @@ const Column = ({state}) => {
       </div>
 
       {tasks.map((task) => (
-        <Task key={task.title} title={task.title} />
+        <Task key={task.id} title={task.title} />
       ))}
 
       {open && (
