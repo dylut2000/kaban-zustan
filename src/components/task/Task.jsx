@@ -15,7 +15,7 @@ const Task = ({title}) => {
     <div
       className='task'
       draggable
-      onDragStart={() => setDraggedTask(task.title)}
+      onDragStart={() => setDraggedTask(task.id, task.title)}
     >
       <div>{task.title}</div>
       <div className='bottomWrapper'>

@@ -7,6 +7,11 @@
   margin: 0 0.5rem;
   border-radius: 0.2rem;
   padding: 0.5rem;
+  border: dashed 4px transparent;
+}
+
+.column.drop {
+  border: dashed 4px var(--WHITE);
 }
 
 .titleWrapper {

@@ -3,10 +3,12 @@ import './Column.css'
 import Task from '../task/Task'
 import {useStore} from '../../store'
 import {shallow} from 'zustand/shallow'
+import classNames from 'classnames'
 
 const Column = ({state}) => {
   const [text, setText] = useState('')
   const [open, setOpen] = useState(false)
+  const [drop, setDrop] = useState(false)
 
   const tasks = useStore(
     (store) => store.tasks.filter((task) => task.state == state),
@@ -23,11 +25,19 @@ const Column = ({state}) => {
 
   return (
     <div
-      className='column'
-      onDragOver={(e) => e.preventDefault()}
+      className={classNames('column', {drop: drop})}
+      onDragOver={(e) => {
+        setDrop(true), e.preventDefault()
+      }}
       onDrop={(e) => {
-        moveTask(draggedTask, state)
-        console.log(draggedTask), setDraggedTask(null)
+        moveTask(draggedTask.id, draggedTask.title, state)
+        console.log(draggedTask)
+        setDraggedTask(null)
+        setDrop(false)
+      }}
+      onDragLeave={(e) => {
+        setDrop(false)
+        e.preventDefault()
       }}
     >
       <div className='titleWrapper'>
