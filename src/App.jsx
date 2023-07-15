@@ -7,7 +7,6 @@ const App = () => {
       <Column state='PLANNED' />
       <Column state='ONGOING' />
       <Column state='DONE' />
-      <Column state='DONE' />
     </div>
   )
 }
